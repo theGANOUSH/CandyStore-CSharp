@@ -25,9 +25,13 @@ namespace CandyStore
         {
             try
             {
-                string[] lines = System.IO.File.ReadAllLines(@"Input.txt");
+                StreamReader fs = new StreamReader(@"Input.txt");
 
-                Console.WriteLine(lines[0]);
+                Char buffer = (char)fs.Read();
+
+                Console.WriteLine(buffer);
+                fs.Close();
+
 
                 Console.ReadKey();
             }

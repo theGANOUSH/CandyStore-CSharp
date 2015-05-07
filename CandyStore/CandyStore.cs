@@ -29,13 +29,21 @@ namespace CandyStore
 
             string data;
 
+            string[] nTests = fs.ReadLine().Split(' ');
+            int nCandies = int.Parse(nTests[0]);
+            double nCents = double.Parse(nTests[1]) *100;
+
+            Console.WriteLine(nCandies + ", " + nCents);
+
             while ((data = fs.ReadLine()) != null)
             {
-                string[] items = data.Split(' ');
-                int nCandies = int.Parse(items[0]);
-                double nCents = double.Parse(items[1]);
 
-                Console.WriteLine(nCandies + ", " + nCents);
+                string[] items = data.Split(' ');
+                int Calories = int.Parse(items[0]);
+                double cCost = double.Parse(items[1]) * 100;
+
+
+                Console.WriteLine(Calories + ", " + cCost);
 
 
             }

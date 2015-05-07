@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace CandyStore
@@ -21,17 +22,33 @@ namespace CandyStore
                 return nKnapsack;
         }
 
+        static void getInput()
+        {
+            
+            StreamReader fs = new StreamReader(@"Input.txt");
+
+            string data;
+
+            while ((data = fs.ReadLine()) != null)
+            {
+                string[] items = data.Split(' ');
+                int nCandies = int.Parse(items[0]);
+                double nCents = double.Parse(items[1]);
+
+                Console.WriteLine(nCandies + ", " + nCents);
+
+
+            }
+
+            fs.Close();
+
+        }
+
         static void Main(string[] args)
         {
             try
             {
-                StreamReader fs = new StreamReader(@"Input.txt");
-
-                Char buffer = (char)fs.Read();
-
-                Console.WriteLine(buffer);
-                fs.Close();
-
+                getInput();
 
                 Console.ReadKey();
             }
